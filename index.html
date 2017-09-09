@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YoungKingDave Soundboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+
+    <div class="body-interior">
+
+      <h1>YoungKingDave Soundboard</h1>
+      <div class="grid-x">
+
+        <div class="small-6 cell">
+          <button class="button">Its Fucking Nice Out</button>
+          <audio controls preload>
+            <source src="sounds/Its_Fucking_Nice_Out.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="small-6 cell">
+          <button class="button">DM or hit my line</button>
+          <audio controls preload>
+            <source src="sounds/Either_DM_Me_Or_Hit_My_Line.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="small-6 cell">
+          <button class="button">I Got Loud I'm Tryna Smoke</button>
+          <audio controls preload>
+            <source src="sounds/I_Got_Loud_Im_Tryna_Smoke.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="small-6 cell">
+          <button class="button">Feel Me</button>
+          <audio controls preload>
+            <source src="sounds/Feel_Me.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="small-6 cell">
+          <button class="button">I Got Loud</button>
+          <audio controls preload>
+            <source src="sounds/I_Got_Loud.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="small-6 cell">
+          <button class="button">Smoke Some Loud</button>
+          <audio controls preload>
+            <source src="sounds/Smoke_Some_Loug.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="small-6 cell">
+          <button class="button">Who's Tryna Chill</button>
+          <audio controls preload>
+            <source src="sounds/Whos_Tryna_Chill.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script>
+      $(document).foundation();
+      jQuery(document).ready(function(){
+        jQuery('button').click(function(){
+          $(this).parent().find('audio')[0].play();
+        });
+      });
+    </script>
+
+  </body>
+</html>
