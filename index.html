@@ -76,6 +76,16 @@
     <script>
       $(document).foundation();
       jQuery(document).ready(function(){
+        audio_files = jQuery('audio');
+
+        sources=["sounds/Its_Fucking_Nice_Out.mp3", ]
+        // try calling new Audio() and .load() on all the sources to workaround mobile browser issues
+        
+
+        function loadAudio(i){
+          audio_files[i].load();
+        }
+
         jQuery('button').click(function(){
           $(this).parent().find('audio')[0].play();
         });
