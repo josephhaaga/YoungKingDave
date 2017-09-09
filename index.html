@@ -31,13 +31,6 @@
           </audio>
         </div>
         <div class="small-6 cell">
-          <button class="button">I Got Loud I'm Tryna Smoke</button>
-          <audio controls preload>
-            <source src="sounds/I_Got_Loud_Im_Tryna_Smoke.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-        <div class="small-6 cell">
           <button class="button">Feel Me</button>
           <audio controls preload>
             <source src="sounds/Feel_Me.mp3" type="audio/mpeg">
@@ -66,6 +59,13 @@
           </audio>
         </div>
       </div>
+      <div class="small-6 cell">
+        <button class="button">Got Loud; Tryna Smoke</button>
+        <audio controls preload>
+          <source src="sounds/I_Got_Loud_Im_Tryna_Smoke.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
 
     </div>
 
@@ -73,19 +73,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.preload/jquery.preload.min.js"></script>
     <script>
       $(document).foundation();
       jQuery(document).ready(function(){
-        audio_files = jQuery('audio');
-
-        sources=["sounds/Its_Fucking_Nice_Out.mp3", ]
-        // try calling new Audio() and .load() on all the sources to workaround mobile browser issues
-        
-
-        function loadAudio(i){
-          audio_files[i].load();
-        }
-
+        $.preload([
+          'sounds/Either_DM_Me_Or_Hit_My_Line.mp3',
+          'sounds/Its_Fucking_Nice_Out.mp3',
+          'sounds/Feel_Me.mp3',
+          'sounds/Smoke_Some_Loug.mp3',
+          'sounds/Hit_My_Line.mp3',
+          'sounds/Whos_Tryna_Chill.mp3',
+          'sounds/I_Got_Loud.mp3',
+          'sounds/I_Got_Loud_Im_Tryna_Smoke.mp3'
+        ]).then(function() {
+        	jQuery('body').animate({'opacity':1});
+          console.log("Done preload")
+        }, function() {
+        	console.error("Something went wrong.")
+        }, function(progress) {
+        	console.debug(Math.round(progress * 100) + '%')
+        })
         jQuery('button').click(function(){
           $(this).parent().find('audio')[0].play();
         });

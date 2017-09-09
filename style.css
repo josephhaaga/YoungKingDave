@@ -5,3 +5,6 @@
 audio{
   display: none;
 }
+body{
+  opacity: 0;
+}
